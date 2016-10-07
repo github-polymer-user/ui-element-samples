@@ -8,6 +8,7 @@
     "spdy": "^3.4.0",
     "http2": "^3.3.5",
     "mz": "^2.4.0"
+    "webcomponents.js": "^0.7.22"
   },
   "devDependencies": {}
 }
