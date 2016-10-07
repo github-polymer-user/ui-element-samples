@@ -36,20 +36,27 @@ sc-view {
   opacity: 0;
   pointer-events: none;
   transform: scale(0.95);
-  transition: transform 0.3s cubic-bezier(0,0,0.3,1),
-    opacity 0.3s cubic-bezier(0,0,0.3,1);
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  transition: transform 0.3s cubic-bezier(0,0,0.3,1), opacity 0.3s cubic-bezier(0,0,0.3,1);
+  -webkit-transition: transform 0.3s cubic-bezier(0,0,0.3,1), opacity 0.3s cubic-bezier(0,0,0.3,1);
+  -moz-transition: transform 0.3s cubic-bezier(0,0,0.3,1), opacity 0.3s cubic-bezier(0,0,0.3,1);
   font-size: 20vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   color: white;
+  zoom: 1;
+  overflow: hidden;
 }
 
 sc-view.visible {
   opacity: 1;
   pointer-events: auto;
   transform: none;
+  -webkit-transform: none;
+  -moz-transform: none;
 }
 
 sc-view[remote]::before {
@@ -63,6 +70,8 @@ sc-view[remote]::before {
   bottom: 0;
   background: inherit;
   transition: opacity 0.3s cubic-bezier(0,0,0.3,1);
+  -webkit-transition: opacity 0.3s cubic-bezier(0,0,0.3,1);
+  -moz-transition: opacity 0.3s cubic-bezier(0,0,0.3,1);
 }
 
 sc-view[remote]::after {
@@ -77,10 +86,20 @@ sc-view[remote]::after {
   background: url(images/spinner.png) center center no-repeat;
   background-size: 40px 40px;
   animation-name: spin;
+  -webkit-animation-name: spin;
+  -moz-animation-name: spin;
   animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
   animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
   animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
   transition: opacity 0.3s cubic-bezier(0,0,0.3,1);
+  -webkit-transition: opacity 0.3s cubic-bezier(0,0,0.3,1);
+  -moz-transition: opacity 0.3s cubic-bezier(0,0,0.3,1);
 }
 
 sc-view[remote].pending::before,
@@ -91,10 +110,14 @@ sc-view[remote].pending::after {
 @keyframes spin {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+    -moz-transform: translate(-50%, -50%) rotate(0deg);
   }
 
   to {
     transform: translate(-50%, -50%) rotate(360deg);
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+    -moz-transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
